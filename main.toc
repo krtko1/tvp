@@ -1,0 +1,51 @@
+\babel@toc {slovak}{}
+\contentsline {chapter}{\numberline {1}Paralelné gramatiky}{3}%
+\contentsline {section}{\numberline {1.1}Lindenmayerove systémy ($L$-systémy)}{3}%
+\contentsline {subsection}{\numberline {1.1.1}$OL$-systémy}{3}%
+\contentsline {subsection}{\numberline {1.1.2}Porovnanie $\mathcal {L}_{OL}$ s Chomského hierarchiou}{7}%
+\contentsline {subsection}{\numberline {1.1.3}Rozšírené $OL$-systémy ($EOL$-systémy)}{9}%
+\contentsline {subsection}{\numberline {1.1.4}$TOL$-systémy (table)}{12}%
+\contentsline {section}{\numberline {1.2}Ďaľšie paralelné gramatiky}{12}%
+\contentsline {subsection}{\numberline {1.2.1}Indické paralelné gramatiky}{12}%
+\contentsline {subsection}{\numberline {1.2.2}Ruské paralelné gramatiky}{13}%
+\contentsline {subsection}{\numberline {1.2.3}Absolútne paralelné gramatiky}{13}%
+\contentsline {chapter}{\numberline {2}Generatívne systémy}{14}%
+\contentsline {section}{\numberline {2.1}Definície a označenia}{14}%
+\contentsline {section}{\numberline {2.2}Porovnanie generatívnej sily $g$-systémov s gramatikami Chomského hierarchie}{15}%
+\contentsline {section}{\numberline {2.3}Modelovanie známych gramatík pomocou $g$-systémov}{17}%
+\contentsline {section}{\numberline {2.4}Miery zložitosti}{18}%
+\contentsline {section}{\numberline {2.5}Porovnanie sekvenčných a paralelných $g$-systémov}{19}%
+\contentsline {section}{\numberline {2.6}Normálové tvary $g$-systémov}{23}%
+\contentsline {section}{\numberline {2.7}Charakterizácia triedy $TIME_{\mathcal {G}}(f(n))$ pomocou sek\-venč\-ného priestoru}{24}%
+\contentsline {section}{\numberline {2.8}Niektoré vlastnosti ``rýchlo generovateľných'' jazykov}{29}%
+\contentsline {section}{\numberline {2.9}Záverom o $g$-systémoch}{29}%
+\contentsline {chapter}{\numberline {3}Kooperujúce distribuované systémy gramatík ($CDGS$)}{30}%
+\contentsline {section}{\numberline {3.1}Niektoré otázky popisnej zložitosti}{33}%
+\contentsline {chapter}{\numberline {4}Paralelné komunikujúce systémy gramatík ($PCGS$)}{35}%
+\contentsline {section}{\numberline {4.1}Definície a označenia}{35}%
+\contentsline {section}{\numberline {4.2}Parametre uvažované na $PCGS$}{36}%
+\contentsline {section}{\numberline {4.3}Generatívna sila $PCGS$}{37}%
+\contentsline {section}{\numberline {4.4}Porovnanie $PCGS$ so sekvenčnými triedami}{43}%
+\contentsline {section}{\numberline {4.5}Niektoré ďalšie vlastnosti $PCGS$}{46}%
+\contentsline {chapter}{\numberline {5}Alternujúce stroje}{47}%
+\contentsline {section}{\numberline {5.1}Definície a označenia}{47}%
+\contentsline {section}{\numberline {5.2}Miery zložitosti}{49}%
+\contentsline {section}{\numberline {5.3}Alternujúce vs. sekvenčné triedy zložitosti}{50}%
+\contentsline {section}{\numberline {5.4}Alternujúce konečné automaty ($AFSA$)}{57}%
+\contentsline {section}{\numberline {5.5}Alternujúce zásobníkové automaty ($APDA$)}{59}%
+\contentsline {section}{\numberline {5.6}Synchronizované alternujúce stroje}{60}%
+\contentsline {chapter}{\numberline {6}Booleovské obvody ($BO$)}{62}%
+\contentsline {section}{\numberline {6.1}Definície a označenia}{62}%
+\contentsline {section}{\numberline {6.2}Miery zložitosti}{63}%
+\contentsline {section}{\numberline {6.3}$BC$-uniformné booleovské obvody}{63}%
+\contentsline {section}{\numberline {6.4}Porovnanie $BO$ a $TS$}{65}%
+\contentsline {section}{\numberline {6.5}Druhá počítačová trieda a Nick Class}{69}%
+\contentsline {section}{\numberline {6.6}Iné uniformity pre booleovské obvody}{70}%
+\contentsline {section}{\numberline {6.7}Porovnanie modelov $BO$ a $ATS$}{73}%
+\contentsline {chapter}{\numberline {7}Parallel Random Access Machine $(PRAM)$}{78}%
+\contentsline {section}{\numberline {7.1}Definície a označenia}{78}%
+\contentsline {subsection}{\numberline {7.1.1}$RAM$}{78}%
+\contentsline {subsection}{\numberline {7.1.2}$PRAM$}{79}%
+\contentsline {section}{\numberline {7.2}Miery zložitosti}{81}%
+\contentsline {section}{\numberline {7.3}Výpočtová sila modelu $PRAM$}{82}%
+\contentsline {section}{\numberline {7.4}Porovnanie modelov $BO$ a $PRAM$}{84}%
