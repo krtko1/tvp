@@ -15,7 +15,7 @@
 \contentsline {section}{\numberline {2.3}Modelovanie známych gramatík pomocou $g$-systémov}{17}%
 \contentsline {section}{\numberline {2.4}Miery zložitosti}{18}%
 \contentsline {section}{\numberline {2.5}Porovnanie sekvenčných a paralelných $g$-systémov}{19}%
-\contentsline {section}{\numberline {2.6}Normálové tvary $g$-systémov}{23}%
+\contentsline {section}{\numberline {2.6}Normálové tvary $g$-systémov}{22}%
 \contentsline {section}{\numberline {2.7}Charakterizácia triedy $TIME_{\mathcal {G}}(f(n))$ pomocou sek\-venč\-ného priestoru}{24}%
 \contentsline {section}{\numberline {2.8}Niektoré vlastnosti ``rýchlo generovateľných'' jazykov}{29}%
 \contentsline {section}{\numberline {2.9}Záverom o $g$-systémoch}{29}%
