@@ -510,8 +510,8 @@ priamo z nej vyplývajú.
 (Vzťah popisnej zložitosti sekvenčných a paralelných $g$-systémov)
 \begin{itemize}
   \item $\forall L\med STATE_{\mathcal{S}}(L)\leq
-  3.STATE_{\mathcal{G}}(L)+3$
-  \item $ARC_{\mathcal{S}}(L)\leq 32.STATE_{\mathcal{G}}(L)+22.\#\Sigma_L$
+  3\cdot STATE_{\mathcal{G}}(L)+2$
+  \item $ARC_{\mathcal{S}}(L)\leq 32\cdot STATE_{\mathcal{G}}(L)+22\cdot\#\Sigma_L$
 \end{itemize}
 \end{veta}
 
@@ -626,8 +626,8 @@ splnená. $G''$ zostrojíme v dvoch krokoch:
 Pre každý jazyk $L\in\mathcal{L}_{\mathcal{G}_{\varepsilon}}$
 platí:
 \begin{enumerate}
-  \item $STATE_{\mathcal{N}}(L)\leq STATE_{\mathcal{G}_{\mathcal{\varepsilon}}}(L)+3$
-  \item $ARC_{\mathcal{N}}(L)\leq 12.ARC_{\mathcal{G}_{\varepsilon}}(L)+14.\#\Sigma_L$
+  \item $STATE_{\mathcal{N}}(L)\leq STATE_{\mathcal{G}_{\mathcal{\varepsilon}}}(L)+2$
+  \item $ARC_{\mathcal{N}}(L)\leq 12\cdot ARC_{\mathcal{G}_{\varepsilon}}(L)+14\cdot \#\Sigma_L$
   \item $SPACE_{\mathcal{N}}(n)=SPACE_{\mathcal{G}_{\varepsilon}}(n)=\mathcal{L}_{CS}$
   \item $TIME_{\mathcal{N}}(f(n))=TIME_{\mathcal{G}_{\varepsilon}}(f(n))$
 \end{enumerate}
@@ -664,6 +664,7 @@ Dôsledkom tejto vety sú niektoré normálové tvary pre frázové
 gramatiky:
 
 \begin{dosledok}
+Geffertov normálny tvar:\\
 K ľubovoľnému jazyku $L\in\mathcal{L}_{RE}$ existuje taká frázová
 gramatika, že všetky jej pravidlá sú tvaru:
 \begin{enumerate}
@@ -674,11 +675,19 @@ gramatika, že všetky jej pravidlá sú tvaru:
 \end{enumerate}
 \end{dosledok}
 
+Ilustračný príklad:\\
+Majme nejaké pravidlo $\xi \to u$, označme si ho ako pravidlo $100$.
+$1$ budeme kódovať ako $A$ z ľavej strany a $B$ z pravej strany.
+$0$ budeme kódovať ako $C$ z ľavej strany a $D$ z pravej strany.
+Dve susedné $S$ musia uhádnuť to isté pravidlo a potom sa nenerminály medzi nimi vyrušia.
+$S$ hrá rolu všetkých pôvodných neterminálov.
+
 Otvorenými problémami zostávajú:
 \begin{itemize}
-  \item $\mathcal{N}_{5,2}\overset{?}{=}\mathcal{L}_{RE}$
-  \item $\mathcal{N}_{4,2}\overset{?}{=}\mathcal{L}_{RE}$
-  \item $\mathcal{N}_{4,3}\overset{?}{=}\mathcal{L}_{RE}$
+  \item $\mathcal{L}_{\mathcal{N}_{5,2}}\overset{?}{=}\mathcal{L}_{RE}$
+  \item $\mathcal{L}_{\mathcal{N}_{4,2}}\overset{?}{=}\mathcal{L}_{RE}$
+  \item $\mathcal{L}_{\mathcal{N}_{4,3}}\overset{?}{=}\mathcal{L}_{RE}$
+  \item $\mathcal{L}_{syn}=\bigcup_j\mathcal{L}_{\mathcal{N}_{4,j}}\overset{?}{=}\mathcal{L}_{RE}$
 \end{itemize}
 
 \section{Charakterizácia triedy $TIME_{\mathcal{G}}(f(n))$ pomocou
@@ -1007,3 +1016,61 @@ vieme ``tesne'' simulovať na $g$-systémoch, dostaneme priestorové
 ohraničenie $1NSPACE(f(n))$. Naviac pre každý jazyk $L\in
 1NSPACE(f(n))$ existuje nejaký typ paralelnej gramatiky, ktorá $L$
 dokáže generovať v čase $f(n)$.
+
+
+\section{Meranie nedeterminiznu v $g$-systémoch}
+\begin{poznamka}
+Viac v práci \url{http://www.dcs.fmph.uniba.sk/~rovan/Krch-dipl.ps}.
+\end{poznamka}
+\subsection{Počet nedeterministických stavov}
+\begin{veta}
+Nech $M$ je sekvenčný $g$-systém, potom existuje ekvivalentný $M'$,
+v ktorom sú všetky stavy deterministicné, okrem $q_0$.
+\end{veta}
+\begin{poznamka}
+Na sekvenčnosti až tak nezáleží, len dôkaz je zložitejší.
+Premyslite si keby sme vedeli cez $q_0$ prejsť viac krát.
+\end{poznamka}
+
+\subsection{Počet nedeterministických rozhodnutí}
+
+$$
+\begin{aligned}
+dec(q, a) &= \forall \{  h \in H \,|\,  &pr_1(h) = q\\
+                                   &&pr_2(h) = a& \} - 1\\
+          &= 0~\text{ak nie je ziadna hrana} \\
+dec(q)    &= \sum_{\forall a \in \Sigma} dec(q, a)\\
+dec(M)    &= \sum_{q \in k} dec(q)
+\end{aligned}
+$$ 
+
+\begin{veta}
+K ľubovoľnému $g$-systému $G$ s jediným nedeterministickým stavom $q_0$
+existuje ekvivalentné $G'$ také, že $dec(G') \leq |T| + 1$
+\end{veta}
+
+\section{Deterministické g-systémy $DGS$}
+\begin{poznamka}
+Viac v práci \url{http://www.dcs.fmph.uniba.sk/~rovan/Kra-dipl.ps}.
+\end{poznamka}
+
+\#F nemusí byť 1
+
+$DGS$ bez neterminálov $\mathcal{DTG}$ (fancy pismom)
+ 
+\begin{veta}
+Existuje konečný jazyk $L$, $L \in \mathcal{L}(\mathcal{DTG})$.
+\end{veta}
+\begin{dokaz}
+$$L = \{a, aa, b, bb, bba, bbb, \varepsilon\}$$
+\end{dokaz}
+
+\subsection{DGS s neterminálmi}
+\begin{veta}
+$\mathcal{L}(\mathcal{DTG}) \subsetneq \mathcal{L}(\mathcal{DG})$
+\end{veta}
+\begin{veta}
+$\mathcal{L}_{FIN}(\mathcal{DTG}) \subseteq \mathcal{L}(\mathcal{DG})$
+\end{veta}
+$\mathcal{R} \not\subseteq  \mathcal{L}(\mathcal{DG})$
+

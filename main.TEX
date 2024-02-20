@@ -1,24 +1,170 @@
 \NeedsTeXFormat{LaTeX2e}
 \documentclass[a4paper]{report}
 
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{amsthm}
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+\RequirePackage{mleftright}
+%\RequirePackage{siunitx}
+\RequirePackage{xparse}
+\RequirePackage{enumitem}
+\RequirePackage{listings}
+\RequirePackage{lastpage}
+\RequirePackage{wasysym}
+\RequirePackage{pdftexcmds}
+\RequirePackage{xifthen}
+\RequirePackage{verbatim}
+\RequirePackage{color}
+\RequirePackage{float}
+\RequirePackage{caption}
+\RequirePackage{booktabs}
+\RequirePackage{titlesec}
+\RequirePackage{leftidx}
+\RequirePackage{afterpage}
+\RequirePackage{longtable}
+\RequirePackage{graphicx}
+\RequirePackage{etoolbox}
+\RequirePackage{cancel}
+\RequirePackage{multicol}
+\RequirePackage{fancyhdr}
+\RequirePackage{hyphenat}
+\RequirePackage{nicefrac}
+\RequirePackage{pifont}
+\RequirePackage{chngcntr}
+\RequirePackage{mathtools}
+\RequirePackage{ulem}
+\RequirePackage[weather]{ifsym}
+\RequirePackage{nth}
+\RequirePackage{fancyvrb}                                   % fancy verbatim (currently unused)
+\RequirePackage[version=4]{mhchem}
 
-\usepackage[slovak]{babel}
-%\usepackage{slovak}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{graphicx}
+\RequirePackage[all]{nowidow}
+%\RequirePackage{boolexpr}                                   % boolean expressions, switch
+\RequirePackage[mathlf]{MinionPro}
+\RequirePackage[MnSymbol]{mathspec}                         % includes fontspec
+\RequirePackage[f]{esvect}
+\RequirePackage{accents}
+
+\AtBeginEnvironment{verbatim}{\setlist[trivlist]{nolistsep}}
+%\newfontfamily\arabicfont[Script=Arabic]{Scheherazade New}
+
+\definecolor{colour-url}{RGB}{0, 137, 162}
+\definecolor{colour-link}{RGB}{0, 137, 162}
+
+\RequirePackage[
+    colorlinks              = true,
+    linkcolor               = colour-link,                  % custom Trojsten link colour
+    urlcolor                = colour-url,                   % custom Trojsten URL link colour
+]{hyperref}
+
+\RequirePackage{polyglossia}                                % multi-language support
+\RequirePackage{xunicode}
+%\RequirePackage{bidi}
+\setdefaultlanguage{slovak}
+
+\RequirePackage[nodisplayskipstretch]{setspace}
+
+% paragraph settings -- formatting paragraphs and list environments
+\linespread{1.0}
+
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{1em plus 0.1em}
+
+\setstretch{1.0}
+
+\NewDocumentCommand{\setDisplaySkips}{}{%
+    \setlength{\abovedisplayskip}{10pt}%
+    \setlength{\belowdisplayskip}{10pt}%
+    \setlength{\abovedisplayshortskip}{4pt}%
+    \setlength{\belowdisplayshortskip}{4pt}%
+    \setlength{\jot}{10pt}%
+}
+\appto{\normalsize}{\setDisplaySkips}%
+\appto{\small}{\setDisplaySkips}%
+\appto{\footnotesize}{\setDisplaySkips}%
+\setDisplaySkips
+
+\setlength{\itemindent}{0pt}
+\setlength{\textfloatsep}{3mm}
+\setlength{\LTcapwidth}{0.8\textwidth}
+
+% Setup enumitem options for *description*, *enumerate* and *itemize*
+
+
+% Setup figure caption format and width
+\captionsetup[figure]{
+    format                  = hang,
+    width                   = 0.9\textwidth,
+    textfont                = it,
+}
+
+\renewcommand{\arraystretch}{1.0}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\NewExpandableDocumentCommand{\rootDirectory}{}{input}
+\NewExpandableDocumentCommand{\activeDirectory}{}{<undefined>}
+
+\NewExpandableDocumentCommand{\setRoot}{m}{%
+    \RenewExpandableDocumentCommand{\rootDirectory}{}{#1}%
+}
+
+\NewExpandableDocumentCommand{\setActive}{m}{%
+    \RenewExpandableDocumentCommand{\activeDirectory}{}{#1}%
+}
 
 \title{Teória paralelných výpočtov}
-\author{verzia 0.8}
-\date{12.02.2001}
+\author{Poznámky z prednášok prof. RNDr. Branislav Rovan, PhD\\spísané študentmi informatiky na FMFI UK}
+\date{6.10.2022}
 
 \topmargin=0pt
 \textwidth=147mm
 \oddsidemargin=20pt
 \evensidemargin=20pt
+
+\makeatletter
+    \def\new@mathgroup{\alloc@8\mathgroup\mathchardef\@cclvi}
+    \patchcmd{\document@select@group}{\sixt@@n}{\@cclvi}{}{}
+    \patchcmd{\select@group}{\sixt@@n}{\@cclvi}{}{}
+\makeatother
+
+\defaultfontfeatures{
+    Mapping         = tex-text,
+    Ligatures       = TeX
+}
+
+\setmainfont[
+    Path            = fonts/MinionPro/ ,
+    Extension       = .otf ,
+    UprightFont     = *-Regular ,
+    BoldFont        = *-Bold ,
+    ItalicFont      = *-It ,
+    BoldItalicFont  = *-BoldIt
+]{MinionPro}
+
+\setmonofont[
+    Path            = fonts/UbuntuMono/ ,
+    Scale           = 0.9,
+    Extension       = .ttf ,
+    UprightFont     = *-r ,
+    BoldFont        = *-b ,
+    ItalicFont      = *-i ,
+    BoldItalicFont  = *-bi
+]{UbuntuMono}
+
+\setsansfont[
+    Path            = fonts/ ,
+    Scale           = 0.9,
+    Extension       = .ttf ,
+    UprightFont     = *-r ,
+    BoldFont        = *-b ,
+    ItalicFont      = *-i ,
+    BoldItalicFont  = *-bi
+]{verdana}
+
+\DeclareFontFamily{U}{skulls}{}
+\DeclareFontShape{U}{skulls}{m}{n}{ <-> skull }{}
+\newcommand{\skull}{\text{\usefont{U}{skulls}{m}{n}\symbol{'101}}}
+
 
 \begin{document}
 

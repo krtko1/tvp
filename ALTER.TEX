@@ -871,3 +871,40 @@ Dá sa ukázať tvrdenie, ktoré hovorí o tom, že trieda jazykov
 rozpoznávaných synchronizovanými konečnými automatmi je presne
 $\mathcal{L}_{CS}$
 \end{poznamka}
+
+HKRS On power of synchronization on APDA
+
+Simulácia pre LBA, proces pre políčko, hlavu, 
+
+
+\begin{veta}
+$NLOG = \bigcup_k NFA(k) = SAFA(1)$
+\end{veta}
+
+King 
+
+\begin{poznamka}
+Synchronizácia pri alternujúcich strojoch čas neovplyvní.
+\end{poznamka}
+
+\begin{veta}
+King
+
+$\mathcal{L}(SAFA) = \mathcal{L}_{CS}$
+\end{veta}
+
+\begin{veta}
+\begin{itemize}
+\item $PSPACE = AP = SALOGSPACE = \mathcal{L}(\underset{{k}}{\bigcup} 2SAFA(k))$
+
+\item $SASPACE(S(n)) = \underset{{c>0}}{\bigcup} DSPACE(c^{S(n)}) = \underset{{c>0}}{\bigcup} ATIME(c^{S(n)}) = \underset{{c>0}}{\bigcup} SATIME(c^{S(n)})$
+\end{itemize}
+\end{veta}
+
+$$
+\begin{aligned}
+DLOG && NLOG && P   && NP                                  && PSPACE\\
+DFA  && NKA  && AFA && \underset{{k}}{\bigcup} \mathcal{L}(SAFA(k, m^k)) && SAFA
+\end{aligned}
+$$
+On comunication bounded SAFA acta inf. volume 31 (1994) 315-327
